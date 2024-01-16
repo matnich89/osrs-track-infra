@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: myApp-deployment
+  name: osrs-track-search
   labels:
     app: osrs-track-search
 spec:
@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: osrs-track-search
-          image:
+          image: us-east1-docker.pkg.dev/osrs-track/osrs-track-search/osrs-track-search
           ports:
             - containerPort: 8080
 ---
