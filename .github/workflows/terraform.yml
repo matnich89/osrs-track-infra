@@ -1,4 +1,4 @@
-name: 'Terraform GitHub Actions'
+name: 'Osrs-Track Infra Terraform'
 
 on:
   push:
