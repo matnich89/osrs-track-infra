@@ -1,4 +1,5 @@
 name: 'Terraform GitHub Actions'
+
 on:
   push:
     branches:
@@ -17,7 +18,15 @@ jobs:
       - name: 'Setup Terraform'
         uses: hashicorp/setup-terraform@v2
         with:
-          terraform_version: 1.0.0
+          terraform_version: 1.5.7
+
+      - name: 'Setup Google Credentials'
+        env:
+          GCP_SA_KEY: ${{ secrets.GCP_SA_KEY }}
+        run: |
+          echo "$GCP_SA_KEY" > account.json
+          echo "GOOGLE_APPLICATION_CREDENTIALS=${PWD}/account.json" >> $GITHUB_ENV
+        working-directory: ./terraform
 
       - name: 'Terraform Init'
         run: terraform init
