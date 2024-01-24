@@ -16,9 +16,12 @@ spec:
     spec:
       containers:
         - name: osrs-track-search
-          image: us-east1-docker.pkg.dev/osrs-track/osrs-track-search/osrs-track-search
+          image: us-east1-docker.pkg.dev/osrs-track/osrs-track-search/osrs-track-search:latest
           ports:
             - containerPort: 8080
+          env:
+            - name: NATS_URL
+              value: "nats://my-nats.nats.svc.cluster.local:4222"
 ---
 apiVersion: v1
 kind: Service
