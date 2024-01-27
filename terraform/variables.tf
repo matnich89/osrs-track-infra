@@ -5,7 +5,7 @@ variable "region" {
 
 variable "project_id" {
   type    = string
-  default = "osrs-track"
+  default = "osrs-track-412507"
 }
 
 variable "cluster_name" {
@@ -40,6 +40,6 @@ variable "preemptible" {
 
 variable "state_bucket" {
   type    = string
-  default = "osrs-track-state"
+  default = "osrs-track-terraform-state"
 
 }
