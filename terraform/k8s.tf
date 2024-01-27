@@ -36,7 +36,6 @@ resource "google_container_node_pool" "primary_node" {
   node_config {
     preemptible  = false
     machine_type = "e2-standard-2"
-    service_account = google_service_account.osrs-track-service-account.email
     oauth_scopes = [
       "https://www.googleapis.com/auth/cloud-platform"
     ]
